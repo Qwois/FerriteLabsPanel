@@ -1,6 +1,5 @@
 import flet as ft
 import requests
-from main_page import MainPage
 import time
 
 class LoginPage:
@@ -8,6 +7,7 @@ class LoginPage:
         self.page = page
         self.page.title = "Login Page"
         self.page.theme_mode = "dark"
+        self.page.bgcolor = ft.colors.GREY_900
         self.build_login_page()
 
     def build_login_page(self):
@@ -38,6 +38,8 @@ class LoginPage:
         self.page.add(self.login_container)
 
     def handle_login(self, e):
+        from main_page import MainPage
+
         username = self.username_field.value
         password = self.password_field.value
 
